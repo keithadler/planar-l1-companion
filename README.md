@@ -31,8 +31,8 @@ Equivalently, the flow–cut gap of planar graphs is uniformly bounded (via Gupt
 | [03 interpolation](docs/03-interpolation.md) | §4 | Theorem 4.1 and Corollary 4.6 |
 | [04 scales and steps](docs/04-scales-and-steps.md) | §5 | Constant hierarchy, schedules, the step |
 | [05 the main update](docs/05-main-update.md) | §6.1–6.2 | Raise-or-descend, low-tip certificates, seeds |
-| *(in progress)* 06 packing | §6.3 | Proposition 6.6 |
-| *(in progress)* 07 ordered fields | §7 | Ordered fields, transverse coordinate, two arcs |
+| [06 packing](docs/06-packing.md) | §6.3 | Proposition 6.6 |
+| [07 ordered fields](docs/07-ordered-fields.md) | §7 | Ordered fields, transverse coordinate, two arcs |
 | *(in progress)* 08 secondary update | §8 | Clipping near admitted seeds; ordered increments |
 | *(in progress)* 09 assembly | §9–10 | One-step estimates, chart persistence, the schedule, the constant |
 | *(in progress)* 10 where to look | all | Load-bearing steps and precise questions |
