@@ -4,23 +4,23 @@ Tags as in the [README](../README.md). **[stated]** unless tagged. Notation: $s$
 
 ## 5.1 Setting (§6 introduction)
 
-Cells are the connected radial cells of Lemma 2.11, in the broad band $J_1$; $J_2\subset J_1$ denotes a narrow band contained in its broad band. The **frontier** $\partial C$ of a cell $C$ is the union, within $J_1$, of the column intervals of columns having an active link to a column outside $C$; frontier values are always left unchanged. An ordinary $A$-chart has $P=C_0+\tau s$, $\tau\in\{\pm1\}$; comparisons are done in the $s$-orientation (replacing $s$ by $s'$ means replacing $P$ by $C_0+\tau s'$).
+Cells are the connected radial cells of Lemma 2.11, in the broad band $J_1$; $J_2\subset J_1$ denotes a narrow band contained in its broad band. The **frontier** $\partial C$ of a cell $C$ is the union, within $J_1$, of the column intervals of columns having an active link to a column outside $C$; frontier values are always left unchanged. An ordinary $A$-chart has $P=C_0+\tau s$, $\tau\in\lbrace \pm1\rbrace $; comparisons are done in the $s$-orientation (replacing $s$ by $s'$ means replacing $P$ by $C_0+\tau s'$).
 
 ## 5.2 The main replacement (§6.1)
 
 Let $C$ be a cell of width $D$ in $J_1$. It is **available** if its closed $d$-neighbourhood of radius $1$ lies in one old ordinary $A$-chart; then every path of length $\le10D$ starting in $C$ is evaluated in that chart, and
 $$|s(v)-s(w)|\le d_{J_1}(v,w)\le10D\qquad(v,w\in C).\tag{20}$$
 Fix $v_C\in C$, $s_C=s(v_C)$. On the whole $J_1$-component of $C$ define the $(1-\zeta_A)$-Lipschitz function
-$$p_C(v)=\min\Big\{s_C+1,\ \inf_{z\in\partial C}\big[s(z)+(1-\zeta_A)\,d_{J_1}(v,z)\big]\Big\}\tag{21}$$
+$$p_C(v)=\min\Big\lbrace s_C+1,\ \inf_{z\in\partial C}\big[s(z)+(1-\zeta_A)d_{J_1}(v,z)\big]\Big\rbrace \tag{21}$$
 (the infimum over an empty frontier is $+\infty$), apply Theorem 4.1 with error $E_A$ to obtain $\tilde p_C$, and put
 $$F_C=\tilde p_C-4E_A,\qquad p_C-5E_A\le F_C\le p_C-3E_A.\tag{22, 23}$$
 For a fresh offset $\alpha_C\in[0,E_A]$ define a height function $p_{h,C}$: equal to $s_C-1+\alpha_C$ at both ends of $J_1$, to $s_C+2+\alpha_C$ on the interval obtained by deleting outer portions of width $0.09a_1$, and linear in between (Lipschitz constant $3/(0.09a_1)$), extended constantly. If the independent fair coin of $C$ is kept, set on $C$
-$$s'(v)=\max\{\,s(v),\ \min\{F_C(v),\ p_{h,C}(h(v))\}\,\}.\tag{24}$$
+$$s'(v)=\max\lbrace s(v),\ \min\lbrace F_C(v),\ p_{h,C}(h(v))\rbrace \rbrace .\tag{24}$$
 Otherwise, and for unavailable cells, leave the cell unchanged.
 
 *Intuition.* $p_C$ is a cone over the frontier values, capped at $s_C+1$; the update raises the field inside the cell as far as that cone (smoothed) and the height plateau allow, never lowers it, and leaves it unchanged on the frontier and at the band ends.
 
-**Lemma 6.1 (validity and size).** The simultaneous replacements (24) respect switches, preserve vertical nesting and the vertical upper bound for $A$, and admit ordinary charts on every new branch; at any point the change of the $A$-label set has measure at most $\kappa_A(1+10D)$. *Proof ingredients.* At a frontier point $z$, $p_C(z)\le s(z)$ so $F_C(z)\le s(z)-3E_A$; at the band ends (20) gives $p_{h,C}\le s-1+10D+E_A<s$; so the replacement equals the old field on every frontier and at every height endpoint *with a strict margin*. The vertical Lipschitz constants are $\max\{1,\,3/(0.09a_1)\}$ and $\kappa_A\cdot$ that is $<1$ by the choice of $\kappa_A$ (§5.1). Finally $s'\ge s$ and $F_C\le s_C+1-3E_A\le s+1+10D$, so $0\le s'-s\le1+10D$ and (5) gives the bound.
+**Lemma 6.1 (validity and size).** The simultaneous replacements (24) respect switches, preserve vertical nesting and the vertical upper bound for $A$, and admit ordinary charts on every new branch; at any point the change of the $A$-label set has measure at most $\kappa_A(1+10D)$. *Proof ingredients.* At a frontier point $z$, $p_C(z)\le s(z)$ so $F_C(z)\le s(z)-3E_A$; at the band ends (20) gives $p_{h,C}\le s-1+10D+E_A<s$; so the replacement equals the old field on every frontier and at every height endpoint *with a strict margin*. The vertical Lipschitz constants are $\max\lbrace 1,3/(0.09a_1)\rbrace $ and $\kappa_A\cdot$ that is $<1$ by the choice of $\kappa_A$ (§5.1). Finally $s'\ge s$ and $F_C\le s_C+1-3E_A\le s+1+10D$, so $0\le s'-s\le1+10D$ and (5) gives the bound.
 
 ## 5.3 Descending paths and the dichotomy
 
@@ -42,7 +42,7 @@ Retain only eligible pairs $(x,y)$ with $1\le d\le2$ satisfying all interior req
 $$s(e)<s(w)-j\tag{28}$$
 for at least one endpoint $w$, there is a label set of measure $\ge\kappa_Aj/4$ on which both endpoints are active and $e$ is inactive; in no-change mode this gives component-refined $A$-separation $\ge\kappa_Aj/2$. More generally, if later changes have unrefined symmetric-difference costs $\Delta_x,\Delta_y,\Delta_e$ at the three points, the final refined separation is at least
 $$2\big(\kappa_Aj/4-\Delta_x-\Delta_y-\Delta_e\big)_+.\tag{29}$$
-*Proof.* Eligibility puts $x,y,e$ in one old ordinary chart, $P=C_0+\tau s$; restrict to labels with $\sigma=\tau$, where the threshold at $v$ is $T_v=h(v)+\kappa_A\tau C_0+\kappa_As(v)$. Since $|s(\cdot)-s(w)|\le E_A$ for the other endpoint, $E_A\le j/4$ and all heights lie in $J_2$ with $a_2\le\kappa_Aj/4$: $T_v-T_e\ge\kappa_A(j-E_A)-a_2\ge\kappa_Aj/2$ for $v=x,y$. Labels with $\sigma=\tau$ and $T_e\le Z<\min\{T_x,T_y\}$ have the three required memberships and mass $\ge\kappa_Aj/4$ (one half of the label space carries $\sigma=\tau$). By Lemma 3.2 each such label contributes $2$ to the refined distance, and later changes destroy at most mass $\Delta_x+\Delta_y+\Delta_e$. $\square$
+*Proof.* Eligibility puts $x,y,e$ in one old ordinary chart, $P=C_0+\tau s$; restrict to labels with $\sigma=\tau$, where the threshold at $v$ is $T_v=h(v)+\kappa_A\tau C_0+\kappa_As(v)$. Since $|s(\cdot)-s(w)|\le E_A$ for the other endpoint, $E_A\le j/4$ and all heights lie in $J_2$ with $a_2\le\kappa_Aj/4$: $T_v-T_e\ge\kappa_A(j-E_A)-a_2\ge\kappa_Aj/2$ for $v=x,y$. Labels with $\sigma=\tau$ and $T_e\le Z<\min\lbrace T_x,T_y\rbrace $ have the three required memberships and mass $\ge\kappa_Aj/4$ (one half of the label space carries $\sigma=\tau$). By Lemma 3.2 each such label contributes $2$ to the refined distance, and later changes destroy at most mass $\Delta_x+\Delta_y+\Delta_e$. $\square$
 
 **The seed set.** Exclude every retained pair to which Lemma 6.5 applies. The **seeds** are the endpoints of the remaining pairs; a vertex occurring in several remaining pairs is one seed with a fixed *witness* pair, and descending paths for both members of each chosen witness pair are fixed, all from the old fields and bands, *before* any secondary interpolation noise. Seeds are **grouped** by broad and narrow band, their width-$g$ cell in the broad band, and their old chart identifiers in both systems. Groups only organise the update (they introduce no chart boundaries); two seeds of one group are at $d_{J_1}$-distance $\le10g$, their ordinary fields differ by $\le10g$, their full $B$-fields by $\le50g$ (old-chart Lipschitz constants $<5$).
 

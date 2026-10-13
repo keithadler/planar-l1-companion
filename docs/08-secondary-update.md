@@ -15,7 +15,7 @@ $$L\le p_*,\qquad L(w_c)=p_c,\qquad\mathrm{Lip}_{\mathrm{vert}}(L)\le1\tag{36}$$
 $$p_*(v)\ge p_c-0.65R\quad\text{whenever }d_{J_2}(w,v)=R\tag{37}$$
 (vacuous if the sphere is empty). These decisions use no fresh clipping noise.
 
-**Proposals.** Each group gets one independent fair coin; $w_c$, $p_c$, the orientation and $L$ are common to all its narrow-band components. For a kept group let $F$ be its admitted seeds in one narrow-band component (if nonempty), $d_F(v)=\min_{w\in F}d_{J_2}(w,v)$. Apply Theorem 4.1 to $0.9\,d_F$ on the whole component with error $E_B$ to get $Q_F$; on $U_F=\{d_F\le R\}$ the proposal is the minimum of
+**Proposals.** Each group gets one independent fair coin; $w_c$, $p_c$, the orientation and $L$ are common to all its narrow-band components. For a kept group let $F$ be its admitted seeds in one narrow-band component (if nonempty), $d_F(v)=\min_{w\in F}d_{J_2}(w,v)$. Apply Theorem 4.1 to $0.9d_F$ on the whole component with error $E_B$ to get $Q_F$; on $U_F=\lbrace d_F\le R\rbrace $ the proposal is the minimum of
 $$T_F=p_c+0.05R-Q_F\ (38),\qquad O_F=p_c+0.05R+4(L-p_c)+\alpha_F\ \text{(ordinary charts only)}\ (39),\qquad H_F=\psi_F(h)\ (40).$$
 Here $\alpha_F\in[0,E_B]$ is uniform and independent of the interpolation noises; $\psi_F$ equals $p_c-1+\alpha_h$ at both ends of $J_2$, rises linearly to $p_c+2+\alpha_h$ within $0.09a_2$ of each end and is constant on the plateau ($\alpha_h$ uniform on $[0,E_B]$, independent). $p_*$ is replaced by its maximum with the proposals of all kept groups on their domains, and converted back to the old orientation. Conditional on old charts, bands, groups, orientations, admissions and coins, all interpolation and branch noises are fresh, and the noise families of different groups are independent.
 
@@ -30,7 +30,7 @@ Here $\alpha_F\in[0,E_B]$ is uniform and independent of the interpolation noises
 ## 8.2 The increment in ordered charts
 
 For an ordered identifier the ordered part $s$, band $I$ and arc assignment stay fixed, so $t_s$ is fixed. Let $\mathfrak H:[0,\infty)\to[0,1]$ be the trapezoid vanishing off $[0.005R,10]$, equal to $1$ on $[0.01R,8]$ and linear in between. At scale $r$ (original units) add to $u$
-$$\pm\,t_s(v)\,\mathfrak H\big(|t_s(v)|/r\big)\,\min\{1,\ d(v,X\setminus\mathcal R)/r\},\tag{41}$$
+$$\pmt_s(v)\mathfrak H\big(|t_s(v)|/r\big)\min\lbrace 1,\ d(v,X\setminus\mathcal R)/r\rbrace ,\tag{41}$$
 with a fair sign common to the old identifier ($\mathcal R$ = current region; the factor is $1$ if the complement is empty). Old terms of $u$ are retained.
 
 **Lemma 8.3 (increment bound).** If $Q>2000/R$, all increments of one ordered identifier together have $d_I$-Lipschitz constant $\le K=100$; they preserve the nested sets, introduce no chart interfaces, and move each point by at most a universal constant times the scale.

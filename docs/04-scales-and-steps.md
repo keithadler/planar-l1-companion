@@ -22,7 +22,7 @@ $$\epsilon\ \ll\ j\ \ll\ g\ \ll\ R\ \ll\ D\ \ll\ 1.$$
 $$R=10^{-8},\ D=10^{-3},\ g=10^{-14},\ j=10^{-20},\ \epsilon=10^{-24},\ E_A=\tfrac{\epsilon}{1000},\ E_B=10^{-3}R,\quad\zeta_A=\tfrac{\epsilon}{100},\ \zeta_B=\tfrac1{10}.$$
 
 1. Choose $a_1>0$ within the width bound of Theorem 4.1 for $(\zeta_A,E_A)$, within the bounds of Lemmas 2.11 and 2.12 for $D$ and $g$, and with $a_1\le10^{-6}E_A$. Set $\kappa_A=a_1/10^6$.
-2. Choose $a_2>0$ within the bound of Theorem 4.1 for $(\zeta_B,E_B)$ and with $a_2\le10^{-6}\min\{a_1,\kappa_Aj\}$. Set $\kappa_B=a_2/10^6$.
+2. Choose $a_2>0$ within the bound of Theorem 4.1 for $(\zeta_B,E_B)$ and with $a_2\le10^{-6}\min\lbrace a_1,\kappa_Aj\rbrace $. Set $\kappa_B=a_2/10^6$.
 3. Reserve $K=100$ as the Lipschitz bound for the auxiliary field in $B$ (Lemma 8.3); set $\lambda=R/(10^{12}K)$.
 4. If necessary decrease $a_1,a_2$ further to meet the thin-band hypotheses of the geometric lemmas, then choose dependent constants in the order just given. Every step is an upper bound on a newly chosen positive number, so the choice is not circular.
 5. The scale spacing $Q=2^m$ is chosen **last** (§9.3).

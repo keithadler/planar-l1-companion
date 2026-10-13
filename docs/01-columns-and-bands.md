@@ -4,10 +4,10 @@ Status tags as in the [README](../README.md). Everything in this note is **[stat
 
 ## 1.1 Definition 2.1 (column model)
 
-A *column model* consists of a finite cyclically ordered index set $V_0$; for each $i\in V_0$ a copy $\{i\}\times\mathbb R$; and a finite set of *links* $ij$, each with a closed bounded set $S_{ij}=S_{ji}\subset\mathbb R$ of *switch heights*. The quotient $X$ identifies $(i,H)\sim(j,H)$ for $H\in S_{ij}$; $h(i,H)=H$. A *path* is a finite concatenation of vertical segments and switches; its length is the sum of the vertical lengths; $d$ is the infimum of lengths.
+A *column model* consists of a finite cyclically ordered index set $V_0$; for each $i\in V_0$ a copy $\lbrace i\rbrace \times\mathbb R$; and a finite set of *links* $ij$, each with a closed bounded set $S_{ij}=S_{ji}\subset\mathbb R$ of *switch heights*. The quotient $X$ identifies $(i,H)\sim(j,H)$ for $H\in S_{ij}$; $h(i,H)=H$. A *path* is a finite concatenation of vertical segments and switches; its length is the sum of the vertical lengths; $d$ is the infimum of lengths.
 
 * **Noncrossing.** No two links have four distinct endpoints alternating in the cyclic order.
-* **Terminal switches.** Every link $ab$ between *nonconsecutive* indices has $S_{ab}=\{H_e\}$ (the *tip*), and neither $a$ nor $b$ has a switch above $H_e$.
+* **Terminal switches.** Every link $ab$ between *nonconsecutive* indices has $S_{ab}=\lbrace H_e\rbrace $ (the *tip*), and neither $a$ nor $b$ has a switch above $H_e$.
 * For a closed interval $I\subset\mathbb R$: $X_I=h^{-1}(I)$; $d_I$ is the intrinsic metric of paths staying in $I$ (distance $+\infty$ between components); $G_I$ is the *active column graph*, with vertex set $V_0$ and an edge $ij$ whenever $S_{ij}\cap I\ne\varnothing$.
 
 *Lemma 2.2.* $d_I$ is a metric on each component of $X_I$; finite distances are attained by paths using each column at most once; components of $X_I$ correspond to components of $G_I$; bounded closed subsets of components are compact.
@@ -26,18 +26,18 @@ Let $\Gamma$ be a noncrossing circular graph.
 * **Lemma 2.5 (gaps).** If $S$ is a nonempty connected vertex set, every path avoiding $S$ lies in one open circular gap between consecutive vertices of $S$.
 * **Lemma 2.6 (skipping).** A walk in an open arc passing over an index $i$ either visits $i$ or uses an edge with endpoints strictly on both sides of $i$ (a non-neighbour link); a second path starting strictly inside that edge's interval and leaving it visits an endpoint.
 * **Lemma 2.7.** Every $G_I$ is outerplanar and has no $K_{2,3}$ minor. *(Proof: join a new vertex of the complementary disc to all column vertices; a $K_{2,3}$ minor would give $K_{3,3}$ in a planar graph on six vertices, but simple planar bipartite graphs on six vertices have at most 8 edges.)*
-* **Lemma 2.8.** For a component of $X_I$, a source $o$, and $H\in I$, the sets $\{i:d_I(o,(i,H))\le t\}$ are connected in $G_I$.
+* **Lemma 2.8.** For a component of $X_I$, a source $o$, and $H\in I$, the sets $\lbrace i:d_I(o,(i,H))\le t\rbrace $ are connected in $G_I$.
 
 ## 1.4 Portals and radial cells (§2.2)
 
 Fix a closed band $J$ of width $a>0$ with midheight $H_*$, a component $Y$ of $X_J$, a basepoint $o\in Y$ at height $H_*$, and the *radial coordinate* $b_i=d_J\big(o,(i,H_*)\big)$. Then for $v=(i,H)\in X_J$ and linked $i,j$:
 $$d_J(o,v)-b_i\le a/2,\qquad|b_i-b_j|\le a.\tag{2}$$
 
-* **Lemma 2.9 (two portals).** Let $C$ be a component of the subgraph of $G_J$ induced by $\{i:b_i\ge t\}$; an *entrance column* is an $i\in C$ adjacent to some $j$ with $b_j<t$. If entrance columns exist, there are at most two points (*portals*), each of radial value in $[t,t+a)$, such that every point on every entrance column is within $d_J$-distance $200a$ of a portal. *(Proof idea: three entrance points pairwise $>100a$ apart give three vertex-disjoint connectors between the connected sets $C$ and $L=\mathrm{proj}\,B_{d_J}(o,t-12a)$; contraction gives a $K_{2,3}$ minor, contradicting Lemma 2.7.)*
+* **Lemma 2.9 (two portals).** Let $C$ be a component of the subgraph of $G_J$ induced by $\lbrace i:b_i\ge t\rbrace $; an *entrance column* is an $i\in C$ adjacent to some $j$ with $b_j<t$. If entrance columns exist, there are at most two points (*portals*), each of radial value in $[t,t+a)$, such that every point on every entrance column is within $d_J$-distance $200a$ of a portal. *(Proof idea: three entrance points pairwise $>100a$ apart give three vertex-disjoint connectors between the connected sets $C$ and $L=\mathrm{proj}B_{d_J}(o,t-12a)$; contraction gives a $K_{2,3}$ minor, contradicting Lemma 2.7.)*
 * **Definition 2.10 (radial cells).** For $D>0$ and an offset $\theta\in[0,D)$, group indices by $\lfloor (b_i-\theta)/D\rfloor$ into *layers*, and split each layer into connected components of its induced subgraph of $G_J$. A *cell* is the image in $X_J$ of the corresponding column intervals. Its *frontier* $\partial C$ is the image of the columns adjacent in $G_J$ to an index outside the cell. A quotient point shared by two cells lies in the frontier of both.
 * **Lemma 2.11.** If $a\le D/1000$, every cell is compact and path-connected and has weak diameter (measured in $d_J$) at most $10D$.
-* **Lemma 2.12 (padding).** If $\mathrm{dist}(b_i,\theta+D\mathbb Z)>\rho+2a$, every point reachable from $v=(i,H)$ by a band path of length $\le\rho$ has all its representatives in the cell of $i$, and $d_J(v,\partial C)>\rho$. For $\theta$ uniform on $[0,D)$ the condition fails with probability at most $\min\{1,2(\rho+2a)/D\}$. In particular, if $a\le D/1000$ and the radial values of two points are at distance $>0.02D$ from the thresholds, their distances to the frontier exceed $0.01D$, and points in different cells are at $d_J$-distance $>0.01D$.
-* **Lemma 2.13 (successive portal levels).** For a step $\delta>1000a$, the components of $\{b_i\ge n\delta\}$ ($n\ge0$) form a rooted tree; each node's own layer and its children's portals lie within $\delta+220a$ of its own portals, and child portals are at distance $\ge\delta-10a$ from own portals.
+* **Lemma 2.12 (padding).** If $\mathrm{dist}(b_i,\theta+D\mathbb Z)>\rho+2a$, every point reachable from $v=(i,H)$ by a band path of length $\le\rho$ has all its representatives in the cell of $i$, and $d_J(v,\partial C)>\rho$. For $\theta$ uniform on $[0,D)$ the condition fails with probability at most $\min\lbrace 1,2(\rho+2a)/D\rbrace $. In particular, if $a\le D/1000$ and the radial values of two points are at distance $>0.02D$ from the thresholds, their distances to the frontier exceed $0.01D$, and points in different cells are at $d_J$-distance $>0.01D$.
+* **Lemma 2.13 (successive portal levels).** For a step $\delta>1000a$, the components of $\lbrace b_i\ge n\delta\rbrace $ ($n\ge0$) form a rooted tree; each node's own layer and its children's portals lie within $\delta+220a$ of its own portals, and child portals are at distance $\ge\delta-10a$ from own portals.
 
 ## 1.5 Points a reader may wish to check
 

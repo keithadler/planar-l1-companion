@@ -13,14 +13,14 @@ $$\delta=\tfrac E8,\quad a_0=10^{-6}\zeta\delta,\quad q=\tfrac{\zeta\delta}{20},
 Suppose $0<a\le a_0$ and $p:Y\to\mathbb R$ is $(1-\zeta)$-Lipschitz for $d_J$. There is a random function $Q:Y\to\mathbb R$, built from finitely many independent noises uniform on $[q,2q]$, such that for every realisation:
 
 1. $Q$ respects all switches, is $1$-Lipschitz for $d_J$, and $|Q-p|\le6\delta<E$.
-2. $Q$ is a piecewise selection among *named atoms* $A(v)=C+\varepsilon\,d_J(k,v)$ with $\varepsilon\in\{\pm1\}$, $k\in Y$; the source $k$ and sign $\varepsilon$ of each name are fixed before the noises, the intercept $C$ is random; a reused atom keeps its name.
+2. $Q$ is a piecewise selection among *named atoms* $A(v)=C+\varepsilond_J(k,v)$ with $\varepsilon\in\lbrace \pm1\rbrace $, $k\in Y$; the source $k$ and sign $\varepsilon$ of each name are fixed before the noises, the intercept $C$ is random; a reused atom keeps its name.
 3. For $x\in Y$ and $0<\rho\le\rho_0$ there is a list $\mathcal A(x,\rho)$ of at most $N$ names, determined without the noises, containing every atom selected by $Q$ on $B_{d_J}(x,\rho)$; except on an event of probability at most
-$$\frac{N^2}{q}\,(8\rho+\eta),\tag{8}$$
+$$\frac{N^2}{q}(8\rho+\eta),\tag{8}$$
 a single named atom is selected throughout the ball. ($\eta=0$ for continuous noises; for noises uniform on an equally spaced grid including both endpoints of $[q,2q]$, $\eta$ may be the largest spacing.) The same holds for any set of points reached from $x$ by band paths of length $\le\rho$, including representatives met on those paths.
 
 ## 3.2 The construction (§4.1–4.2)
 
-**Tree of superlevel components.** For $n\ge0$, the *nodes of depth $n$* are the components of the subgraph on columns with $b_i\ge n\delta$. The unique depth-0 node is the root; a node of depth $n+1$ lies in exactly one node of depth $n$ (its parent). The *layer* of a node $\nu$ of depth $n$ is the set of its columns with $n\delta\le b_i<(n+1)\delta$ (possibly empty). Every column lies in the layer of exactly one node. For a nonroot node choose a set $K_\nu$ of one or two **entrance portals** (Lemma 2.9); at the root $K_\nu=\{o\}$. By Lemma 2.13, for $v$ in the layer of $\nu$ or a child portal,
+**Tree of superlevel components.** For $n\ge0$, the *nodes of depth $n$* are the components of the subgraph on columns with $b_i\ge n\delta$. The unique depth-0 node is the root; a node of depth $n+1$ lies in exactly one node of depth $n$ (its parent). The *layer* of a node $\nu$ of depth $n$ is the set of its columns with $n\delta\le b_i<(n+1)\delta$ (possibly empty). Every column lies in the layer of exactly one node. For a nonroot node choose a set $K_\nu$ of one or two **entrance portals** (Lemma 2.9); at the root $K_\nu=\lbrace o\rbrace $. By Lemma 2.13, for $v$ in the layer of $\nu$ or a child portal,
 $$\min_{k\in K_\nu}d_J(k,v)\le\delta+220a,\qquad d_J(k,v)\ge\delta-10a\ (k\in K_\nu,\ v\text{ a child portal}),\qquad n\delta\le d_J(o,k)\le n\delta+2a.$$
 
 **Formulas.** For every portal $k\in K_\nu$ sample independent $\alpha_{\nu k}\in[q,2q]$, and at nonroot nodes also $\alpha'_{\nu k},\alpha''_{\nu k}\in[q,2q]$. Define on all of $Y$, recursively down the tree:
@@ -28,7 +28,7 @@ $$\min_{k\in K_\nu}d_J(k,v)\le\delta+220a,\qquad d_J(k,v)\ge\delta-10a\ (k\in K_
 * tentative formula $T_\nu(v)=\min_{k\in K_\nu}\big(p(k)+d_J(k,v)+\alpha_{\nu k}\big)$; at the root $F_\nu=T_\nu$;
 * for a node $\nu$ with parent $\pi$ (whose $F_\pi$ is $1$-Lipschitz):
 $$A_\nu(v)=\min_{k\in K_\nu}\big(F_\pi(k)+d_J(k,v)-\alpha'_{\nu k}\big),\qquad B_\nu(v)=\max_{k\in K_\nu}\big(F_\pi(k)-d_J(k,v)+\alpha''_{\nu k}\big),$$
-$$[L_\nu,U_\nu]=\big[\min(F_\pi,B_\nu),\ \max(F_\pi,A_\nu)\big],\qquad F_\nu=\min\{U_\nu,\max(L_\nu,T_\nu)\}.$$
+$$[L_\nu,U_\nu]=\big[\min(F_\pi,B_\nu),\ \max(F_\pi,A_\nu)\big],\qquad F_\nu=\min\lbrace U_\nu,\max(L_\nu,T_\nu)\rbrace .$$
 
 The interval always contains $F_\pi(v)$ and *collapses* to it near the portals: **[hand]** if $d_J(k,v)<q/2$ then $A_\nu(v)\le F_\pi(k)+d_J(k,v)-\alpha'\le F_\pi(v)+2d_J(k,v)-\alpha'<F_\pi(v)$ (the parent is 1-Lipschitz and $\alpha'\ge q$), and symmetrically $B_\nu(v)>F_\pi(v)$; hence $L_\nu=U_\nu=F_\pi$ in a collar of the portals. All $F_\nu$ are $1$-Lipschitz (finite min/max of $1$-Lipschitz functions). The new atoms of a nonroot node are $p(k)+d_J(k,\cdot)+\alpha_{\nu k}$, $F_\pi(k)+d_J(k,\cdot)-\alpha'_{\nu k}$, $F_\pi(k)-d_J(k,\cdot)+\alpha''_{\nu k}$; the scalar $F_\pi(k)$ is an intercept, not an instruction to inherit an atom. A fixed priority order on names (smaller depth first) resolves ties; the same inherited atom always has the same name.
 
@@ -40,11 +40,11 @@ The interval always contains $F_\pi(v)$ and *collapses* to it near the portals: 
 
 *Key inequalities.* With $r_\nu(v)=\mathrm{dist}_{d_J}(v,K_\nu)$,
 $$p(v)+\zeta r_\nu(v)+q\ \le\ T_\nu(v)\ \le\ p(v)+(2-\zeta)r_\nu(v)+2q,\tag{13}$$
-and $A_\nu\ge p-5\delta+\zeta r_\nu-2q$, $B_\nu\le p+5\delta-\zeta r_\nu+2q$ ((14)–(15)). At a child portal (10) and $a\le10^{-6}\zeta\delta$ give $\zeta r_\nu\ge2q$, hence $U_\nu\ge p-5\delta$ and $L_\nu\le p+5\delta$; clamping a number in $[p,\,p+3\delta]$ (the range of $T_\nu$ there, by (13) and (9)) to an interval with these two properties yields a value in $[p-5\delta,\,p+5\delta]$.
+and $A_\nu\ge p-5\delta+\zeta r_\nu-2q$, $B_\nu\le p+5\delta-\zeta r_\nu+2q$ ((14)–(15)). At a child portal (10) and $a\le10^{-6}\zeta\delta$ give $\zeta r_\nu\ge2q$, hence $U_\nu\ge p-5\delta$ and $L_\nu\le p+5\delta$; clamping a number in $[p,p+3\delta]$ (the range of $T_\nu$ there, by (13) and (9)) to an interval with these two properties yields a value in $[p-5\delta,p+5\delta]$.
 
 **Lemma 4.3.** For $x\in Y$ and $0<\rho\le\rho_0$ there is a node $\nu$, determined without the noises, with $Q=F_\nu$ on $B_{d_J}(x,\rho)$ (including atom names); every point of the ball has a representative on a column with $b_i\ge n\delta$, $n=\mathrm{depth}(\nu)$. *(Radial values in the ball differ by $\le2\rho+2a<\delta$, so layer depths take at most two consecutive values; at the interface the equality collar identifies the formulas.)*
 
-**Lemma 4.4 (bounded depth).** Every atom selected by $F_\nu$ on the ball originates in $\nu$ or one of its last $M$ ancestors; hence at most $N=6(M+1)$ names occur. *Obstruction:* if $\zeta\,d_J(k,v)>13\delta$ for all $k\in K_\mu$, then $T_\mu>p+13\delta$, $A_\mu>p+7\delta$, $B_\mu<p-7\delta$; so if the parent value lies in $[p-6\delta,p+6\delta]$ then $L_\mu=B_\mu$, $U_\mu=A_\mu$, and $F_\mu=\min(A_\mu,T_\mu)>p+7\delta$: a value within $6\delta$ of $p$ cannot be obtained by selecting the parent atom at $\mu$. An ancestor $\mu$ of depth $n-M$ satisfies $d_J(k,v)\ge M\delta-3a$ for $k\in K_\mu$, which (by the definition of $M$) triggers the obstruction.
+**Lemma 4.4 (bounded depth).** Every atom selected by $F_\nu$ on the ball originates in $\nu$ or one of its last $M$ ancestors; hence at most $N=6(M+1)$ names occur. *Obstruction:* if $\zetad_J(k,v)>13\delta$ for all $k\in K_\mu$, then $T_\mu>p+13\delta$, $A_\mu>p+7\delta$, $B_\mu<p-7\delta$; so if the parent value lies in $[p-6\delta,p+6\delta]$ then $L_\mu=B_\mu$, $U_\mu=A_\mu$, and $F_\mu=\min(A_\mu,T_\mu)>p+7\delta$: a value within $6\delta$ of $p$ cannot be obtained by selecting the parent atom at $\mu$. An ancestor $\mu$ of depth $n-M$ satisfies $d_J(k,v)\ge M\delta-3a$ for $k\in K_\mu$, which (by the definition of $M$) triggers the obstruction.
 
 **Lemma 4.5 (fresh-noise comparison).** For two distinct names in the list of Lemma 4.4, $x\in Y$ and $t\ge0$,
 $$\Pr\big(|A(x)-A'(x)|\le t\big)\le\frac{2t+\eta}{q}.\tag{17}$$
@@ -55,9 +55,9 @@ $$\Pr\big(|A(x)-A'(x)|\le t\big)\le\frac{2t+\eta}{q}.\tag{17}$$
 ## 3.4 Corollary 4.6 (comparison with other branches)
 
 Condition on arbitrary prior data. Let $W$ be the union of band paths of length $\le\rho$ issuing from $x$, fixed by the prior data. Let $Q_1,\dots,Q_s$ be interpolation constructions on bands containing all these paths (geometries, inputs and portals fixed beforehand, noise families mutually independent; constants $q_i,N_i,\rho_{0,i}$ as in (6)). Allow as inputs $c_i+\varepsilon_iQ_i$ ($c_i$ fixed, $\varepsilon_i=\pm1$), one fixed branch $f$, and $t$ branches $g_j+\beta_j$ with fixed $g_j$, $f$ whose restrictions to the paths are $L$-Lipschitz in arclength and $\beta_j$ fresh independent uniform noises on intervals of length $w_j>0$. Put
-$$L_*=\max(1,L),\quad S=1+t+\sum_iN_i,\quad q_*=\min\{q_i\}\cup\{w_j\}.$$
+$$L_*=\max(1,L),\quad S=1+t+\sum_iN_i,\quad q_*=\min\lbrace q_i\rbrace \cup\lbrace w_j\rbrace .$$
 If $\rho\le\min_i\rho_{0,i}$ (when $s>0$) and at least one input is randomised, then any fixed expression formed by finitely many minima and maxima of these inputs selects one branch, and for a selected interpolation one atom, throughout $W$, except with conditional probability at most
-$$\frac{S^2}{q_*}\,(8L_*\rho+\eta).\tag{18}$$
+$$\frac{S^2}{q_*}(8L_*\rho+\eta).\tag{18}$$
 *Proof idea.* For two distinct names at $x$ the comparison has the interval bound $(2u+\eta)/q_*$ at tolerance $u$ (Lemma 4.5, conditioning on all noises except the own noise of one of the two atoms; independence of the constructions makes the other atom independent of it; at most one branch has no fresh noise). Take $u=4L_*\rho$, sum over $\le S^2$ pairs; off this event no two listed values agree anywhere on $W$ (changes along each path from $x$ are $\le L_*\rho$), so the selection is constant on each path, hence on $W$.
 
 **Remark 4.7 (as stated).** The conditional-independence hypotheses are substantive: a branch defined using the *current* interpolation noises cannot be treated as a fixed comparison branch, and two arbitrary fixed branches need not have small probability of meeting. Later applications use one old branch plus independently shifted height or ordered branches, after conditioning on bands, old charts, groups and admissions; all portals and interpolation inputs precede the noises being tested.

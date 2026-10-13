@@ -38,7 +38,7 @@ These are computations a reader can verify in minutes:
 1. Identity (5): $\tfrac12(|a+b|+|a-b|)=\max(|a|,|b|)$. **[hand]**
 2. Rebasing law: $\tfrac12[(\varphi_+(b)-\varphi_+(a))+(\varphi_-(b)-\varphi_-(a))]=b-a$. **[hand]**
 3. $E_A=\epsilon/1000=10^{-27}\le j/4=2.5\times10^{-21}$; $a_2\le\kappa_Aj/4$ from $a_2\le10^{-6}\kappa_Aj$. **[hand]**
-4. With $D=10^{-3}$, $\epsilon=10^{-24}$, $d_0\le10D=10^{-2}$: $\zeta_Ad_0+7E_A\le\frac{\epsilon}{100}\cdot10^{-2}+\frac{7\epsilon}{1000}=\epsilon\,(10^{-4}+7\times10^{-3})<\epsilon$. **[hand]**
+4. With $D=10^{-3}$, $\epsilon=10^{-24}$, $d_0\le10D=10^{-2}$: $\zeta_Ad_0+7E_A\le\frac{\epsilon}{100}\cdot10^{-2}+\frac{7\epsilon}{1000}=\epsilon(10^{-4}+7\times10^{-3})<\epsilon$. **[hand]**
 5. $8R+E_A+\epsilon+a_1<12\cdot10^{-5}$ (step (ii) of the packing proof): $8R=8\times10^{-8}$, the rest are far smaller. **[hand]**
 6. $4(0.02R+\eta)\le0.080004R$ for $\eta\le10^{-6}R$. **[hand]**
 7. The interior probability budget: $2(0.21)+2(0.081)=0.582\le\tfrac34$, giving success probability $\ge\tfrac14$. **[hand]**

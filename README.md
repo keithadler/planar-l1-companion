@@ -11,11 +11,12 @@ Section-by-section notes on the OpenAI preprint of 23 September 2026 ([PDF](http
 * **No verdict on the main theorem is given or implied.**
 * Keith Adler is not certain these notes help. They are offered because they may save a reader time on a single lemma; they are not a substitute for reading the paper.
 * Numbering (Definition, Lemma, Proposition, equation) is the paper's own. The paper is 45 pages.
+* Notation: $\square$ marks the end of a proof (the paper's own convention, here reproduced); *[sketch]* or *proof idea* means a summary, not a full proof; $\approx$ in a constant means an order-of-magnitude statement.
 
 ## The result
 
 > **Theorem 1.1 (paper).** There is a universal constant $C\ge 1$ such that for every finite connected planar graph $G=(V,E)$ with positive edge lengths there are a measure space $(\Omega,\mathcal F,\mu)$ and $f:V\to L_1(\Omega,\mathcal F,\mu;\mathbb R)$ with
-> $$d_G(x,y)\le \|f(x)-f(y)\|_1\le C\,d_G(x,y)\qquad(x,y\in V).$$
+> $$d_G(x,y)\le \Vert f(x)-f(y)\Vert _1\le Cd_G(x,y)\qquad(x,y\in V).$$
 
 The paper states that this is the planar case of the conjecture of Gupta, Newman, Rabinovich and Sinclair, and that it gives a uniform bound on the undirected fractional flow–cut gap for planar graphs (via their equivalence). The paper does **not** claim closure under clique-sums, hence not the full conjecture. These notes take no position on whether the theorem is correct.
 
@@ -27,7 +28,7 @@ The paper states that this is the planar case of the conjecture of Gupta, Newman
 |---|---|---|
 | [00 map](docs/00-map.md) | all | Architecture, dependency graph, and the correspondence with the reading log |
 | [01 columns and bands](docs/01-columns-and-bands.md) | §2 | Column models, the circular order, portals, radial cells |
-| [02 charts](docs/02-charts.md) | §3 | Threshold sets $\{Z<h+\sigma\kappa P\}$, charts, exact gluing, component refinement |
+| [02 charts](docs/02-charts.md) | §3 | Threshold sets $\lbrace Z<h+\sigma\kappa P\rbrace $, charts, exact gluing, component refinement |
 | [03 interpolation](docs/03-interpolation.md) | §4 | Theorem 4.1 and Corollary 4.6 |
 | [04 scales and steps](docs/04-scales-and-steps.md) | §5 | Constant hierarchy, schedules, the step |
 | [05 the main update](docs/05-main-update.md) | §6.1–6.2 | Raise-or-descend, low-tip certificates, seeds |

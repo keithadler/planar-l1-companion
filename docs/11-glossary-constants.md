@@ -13,14 +13,14 @@ Tags as in the [README](../README.md). Symbols are the paper's.
 | $b_i$ | radial coordinate $d_J(o,(i,H_*))$ | §2.2 |
 | portal | one of $\le2$ entrance midpoints of a high component | Lemma 2.9 |
 | cell, $\partial C$ | connected component of a radial layer; its frontier | Def. 2.10 |
-| $\Omega=\mathbb R\times\{\pm1\}^{\mathbb N}$, $(Z,\sigma)$ | label space; threshold and sign coordinates | §3.1 |
-| $A_v$ | label set of the point $v$: $\{Z<h(v)+\sigma\kappa P(v)\}$ | (4) |
+| $\Omega=\mathbb R\times\lbrace \pm1\rbrace ^{\mathbb N}$, $(Z,\sigma)$ | label space; threshold and sign coordinates | §3.1 |
+| $A_v$ | label set of the point $v$: $\lbrace Z<h(v)+\sigma\kappa P(v)\rbrace $ | (4) |
 | chart | region + band + field $P$ + label functions $(Z,\sigma)$ | §3.1 |
-| ordinary chart | $P=c+\eta\,s$, $s=d_I(o,\cdot)$ or $0$ | §3.1 |
+| ordinary chart | $P=c+\etas$, $s=d_I(o,\cdot)$ or $0$ | §3.1 |
 | ordered field | Definition 7.1 | §7 |
 | $t_s$ | transverse coordinate of an ordered field $s$ | Def. 7.3 |
 | ordered chart | $P=s+\lambda u$ with $s$ ordered, $u$ $K$-Lipschitz | §7.4 |
-| named atom | $C+\varepsilon\,d_J(k,\cdot)$ with a fixed name | Thm. 4.1 |
+| named atom | $C+\varepsilond_J(k,\cdot)$ with a fixed name | Thm. 4.1 |
 | eligible pair | both radius-5 balls lie in one chart region in each system | §3.3 |
 | descending path | shortest path with $s(z)\le s(w)-d_0+\epsilon$ | Def. 6.2 |
 | seed, group | endpoints of surviving witness pairs; seeds grouped by bands, $g$-cell and chart identifiers | §6.2 |
@@ -41,7 +41,7 @@ Tags as in the [README](../README.md). Symbols are the paper's.
 | $E_B$ | $10^{-3}R$ | interpolation error in $B$ |
 | $\zeta_A,\ \zeta_B$ | $\epsilon/100,\ 1/10$ | Lipschitz slack in Theorem 4.1 |
 | $a_1$ | free, within Thm. 4.1 bound for $(\zeta_A,E_A)$, Lemmas 2.11–2.12, and $a_1\le10^{-6}E_A$ | broad band width |
-| $a_2$ | free, within Thm. 4.1 bound for $(\zeta_B,E_B)$, and $a_2\le10^{-6}\min\{a_1,\kappa_Aj\}$ | narrow band width |
+| $a_2$ | free, within Thm. 4.1 bound for $(\zeta_B,E_B)$, and $a_2\le10^{-6}\min\lbrace a_1,\kappa_Aj\rbrace $ | narrow band width |
 | $\kappa_A,\ \kappa_B$ | $a_1/10^6,\ a_2/10^6$ | label-mass conversion |
 | $K,\ \lambda$ | $100,\ R/(10^{12}K)$ | auxiliary field in $B$ |
 | $Q=2^m$ | chosen last (§9.3) | scale ratio |

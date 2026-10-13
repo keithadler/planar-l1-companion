@@ -19,7 +19,7 @@ Let $B$ be a closed $d_{J_2}$-ball of radius $4R$ with centre $z$ containing a s
 **(i) One band, one chart.** Only a narrow band contained in a broad band can contain seeds, so the broad band $J_1\supseteq J_2$ is unique and the $J_2$-paths from $z$ to the seeds show all seeds lie in one $J_1$-component. Since $d(z,w)\le4R<5$ for every seed $w$ of $B$, $z$ lies in the common chart of $w$'s eligible witness pair; charts partition $X$, so all seeds of $B$ have the same chart identifier in each system. Write $I$ for the common old $A$-band and $s=d_I(o,\cdot)$ for its distance field. All center-to-seed paths of length $\le4R$, all descending witness paths (length $\le0.02$), and the vertical connectors (length $\le a_1$) lie in the old chart band, hence $J_1\subset I$.
 
 **(ii) A connected low set.** Let $H=h(w_*)$, $q_i=s(i,H)$ ($+\infty$ outside the old component), and
-$$t=s(w_*)-12\cdot10^{-5},\qquad S=\{i:\ q_i\le t\}.\tag{31}$$
+$$t=s(w_*)-12\cdot10^{-5},\qquad S=\lbrace i:\ q_i\le t\rbrace .\tag{31}$$
 For every seed $w\in B$: $|s(w)-s(w_*)|\le8R$ (the path through $z$) and $|s(w')-s(w)|\le E_A$. The terminal column $i$ of either chosen descending path of the pair $(w,w')$ therefore satisfies $q_i\le s(w_*)+8R+E_A-10^{-5}+\epsilon+a_1<t$, using $8R+E_A+\epsilon+a_1<12\cdot10^{-5}$. So $S\ne\varnothing$, and it is connected in the active graph of $I$ (Lemma 2.8).
 
 **(iii) The ball avoids $S$.** Every column visited by a center-to-seed path of length $\le4R$ has $q_i\ge s(v)-a_1\ge s(w_*)-8R-a_1>t$, so lies outside $S$. By the gap property (Lemma 2.5) all these path words and their endpoint representatives lie in **one linear circular gap of $S$**; fix a representative of $z$ to order it.
@@ -28,7 +28,7 @@ For every seed $w\in B$: $|s(w)-s(w_*)|\le8R$ (the path through $z$) and $|s(w')
 
 **(v) The skipped case.** Suppose the path switches over $w$ at a link $ab$ with $w$'s representative in $(a,b)$ (order within the gap). The link is not a circular-neighbour link ($(a,b)$ contains a column and the complementary arc contains the nonempty set $S$), hence a single terminal switch at a tip $e$ with height in $J_2$, lying on $P_\pm$, with
 $$d(w,e)\le8R<1,\qquad(a,b)\cap S=\varnothing.\tag{32}$$
-*Claim: the witness partner $w'$ has representative strictly outside $[a,b]$.* If it were in $(a,b)$, its descending path, which ends in $S$, would have to visit column $a$ or $b$ (Lemma 2.4); joining that visit vertically to $e$ and returning along the extreme path and a shortest centre-to-$w$ path gives an $x$–$y$ path of length $\le0.02+a_1+8R<1$, contradicting $d(w,w')\ge1$ (the case $w'\in\{a,b\}$ is similar without the descending segment).
+*Claim: the witness partner $w'$ has representative strictly outside $[a,b]$.* If it were in $(a,b)$, its descending path, which ends in $S$, would have to visit column $a$ or $b$ (Lemma 2.4); joining that visit vertically to $e$ and returning along the extreme path and a shortest centre-to-$w$ path gives an $x$–$y$ path of length $\le0.02+a_1+8R<1$, contradicting $d(w,w')\ge1$ (the case $w'\in\lbrace a,b\rbrace $ is similar without the descending segment).
 
 *Consequence.* The link at $e$ separates the two witness representatives strictly. The pair was **not excluded** in §6.2 and (32) holds, so it fails the barrier-drop condition (28):
 $$s(e)\ge s(w)-j.\tag{33}$$
