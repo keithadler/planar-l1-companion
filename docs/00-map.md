@@ -1,58 +1,66 @@
-# 00. The architecture of the proof on one page
+# 00. Architecture of the proof
 
-## The statement
+Status tags: **[stated]** as in the paper; **[hand]** re-derived here; **[Lean]** machine-checked under listed hypotheses. See the [README](../README.md).
 
-Theorem 1.1: there is one constant `C` such that every finite planar graph metric `d_G` embeds in `L1` with distortion at most `C`:
-`d_G(x,y) ≤ ‖f(x) − f(y)‖₁ ≤ C·d_G(x,y)`. (Corollary: a uniform bound on the flow–cut gap for planar graphs, via Gupta–Newman–Rabinovich–Sinclair.)
+## 0.1 Reduction to cuts
 
-An `L1` embedding is the same as a nonnegative combination of cut metrics `δ_S`. So the proof builds **a random family of cuts** whose total weight (i) never charges an edge more than a constant times its length and (ii) separates every pair in proportion to its distance.
+An embedding $f:V\to L_1$ with $\|f(x)-f(y)\|_1=\sum_{\emptyset\neq S\subsetneq V} w_S\,|\mathbf 1_S(x)-\mathbf 1_S(y)|$, $w_S\ge 0$, is the same thing as a nonnegative combination of cut pseudometrics $\delta_S$ (paper §1.1). The construction therefore produces a random family of cuts whose total weight (i) charges each edge at most $O(1)$ times its length (upper bound) and (ii) separates each pair $(x,y)$ in expectation by $\Omega(d_G(x,y))$ (lower bound). **[stated]**
 
-## The one idea, in four moves
+## 0.2 The four steps
 
-1. **Columns (§2).** Replace the plane graph by vertical lines ("columns") with zero-cost "switches" between them at chosen heights. Height = distance from a root in a shortest-path tree. The plane embedding gives a *circular order* of columns in which the switches do not cross. All planarity is used through this order.
-2. **A structure that makes the upper bound automatic (§3).** Give every point `v` a set of labels `A_v = {ω : Z(ω) < h(v) + σ(ω)·κ·P(v)}`. If these sets grow with height along each column and agree at switches, then every cut distance is at most the length of every path. The upper bound `‖f(x)−f(y)‖ ≤ C·d` is therefore *invariant*: it survives any number of updates, if each update obeys *exact gluing*.
-3. **Random local updates at decreasing scales give the lower bound (§5–§8).** At scale `r` try to separate pairs at distance in `[r, 2r)`. Two systems, **A** and **B**, each with local update rules, are run in a random mixture of four modes. One of the two always has a positive chance of separating a given "eligible" pair, by a case analysis:
-   * main update in A raises the field at one endpoint, **or** the failure to raise supplies a *descending path* (§6.1);
-   * a low *tip* of a switching link separates the pair by a component certificate (§6.2); **or**
-   * the pair's endpoints are *seeds*; only boundedly many seed *groups* meet a small ball (§6.3 packing); a secondary clipping in B separates them (§8.1); **or**
-   * if clipping fails in both orientations, the fixed ordered part of the field rises and falls along short paths, which by a topological argument (§7) puts the endpoints on *opposite arcs* of the circle, where a transverse increment separates them (§8.2).
-4. **A schedule that keeps the gains (§9).** Successive scales differ by a large factor `Q`. Coarser scales rarely destroy the "same chart" condition a pair needs (probability `O(ρ)` per scale, geometric sum), and finer scales move labels too little to erase the separation already gained. Averaging over `m` interleaved schedules covers every distance. Result: `pb/(8m) · d ≤ ‖F(x)−F(y)‖ ≤ 2d`, so `C = 16m/(pb)`.
+**Step 1 (columns, §2).** A plane graph $G$ with root $o$ and a shortest-path tree $T$ is replaced by a *column model*: one copy $\{i\}\times\mathbb R$ of the height line per index $i$ of a cyclically ordered finite set, identified along closed bounded switch sets $S_{ij}\subset\mathbb R$, with *noncrossing* links and *terminal* tips (Definition 2.1). Heights are $h(v)=d_G(o,v)$. Planarity enters only through the cyclic order. (Proposition 2.3.) **[stated]**
 
-## Dependency map
+**Step 2 (an invariant that gives the upper bound, §3).** Assign to each point $v$ a measurable $A_v\subset\Omega$ of labels. If (a) $A$ is nested increasingly along each column, (b) $A_{(i,H)}=A_{(j,H)}$ for $H\in S_{ij}$, and (c) $\mu(A_p\triangle A_q)\le$ vertical length along any column segment, then $\mu(A_p\triangle A_q)\le d(p,q)$ for all $p,q$. The paper realises (a)–(c) by
+$$A_v=\{\omega=(Z,\sigma):\ Z(\omega)<h(v)+\sigma(\omega)\,\kappa\,P(v)\},\qquad \kappa\,\mathrm{Lip}_{\mathrm{vert}}(P)<1,$$
+and proves that updates of the form $P\mapsto\max(P,\text{proposal})$, where the proposal lies strictly below $P$ on the boundary of its domain, preserve (a)–(c) (*exact gluing*, §3.2). **[stated]**; the identity $\mu(A_v\triangle A_w)=\max\{|h(v)-h(w)|,\kappa|P(v)-P(w)|\}$ is **[hand]** and **[Lean]**; exact gluing is **[Lean]** (see [12](12-lean-status.md)).
 
-```
-§2 columns, circular order, portals, cells  ───────────────┐
-        │                                                   │
-        ▼                                                   ▼
-§3 charts, exact gluing, component refinement      §4 interpolation theorem 4.1, Cor 4.6
-        │                      │                            │
-        │                      ▼                            │
-        │          §5 constants and one step                │
-        │                      │                            │
-        ▼                      ▼                            ▼
-§6.1 main update ──► §6.2 seeds ──► §6.3 packing ──┐   (all probability estimates)
-                                                   ▼
-§7 ordered fields, transverse field ──► §8 secondary update and increment
-                                                   │
-                                                   ▼
-                                  §9 one-step estimates, chart persistence, schedule
-                                                   │
-                                                   ▼
-                          Theorem 1.1  ──►  §10 almost-embeddable families (needs the bounded-treewidth companion)
-```
+**Step 3 (random local updates, §4–§8).** At a scale $r$ one tries to separate pairs $\{x,y\}$ with $d(x,y)\in[r,2r)$. Two systems, $A$ and $B$, are used; one step is one of four equally likely modes: no change, a main update in $A$, secondary clipping in $B$, an ordered increment in $B$. For a pair that is *eligible* (both radius-5 balls lie in one chart region in each system) the paper proves, by a case analysis, that with probability at least $p>0$ the pair acquires a separation certificate of size $\ge br$:
 
-## Where each of Hung Le's log entries lands
-
-| His log (2026) | What he read | These notes |
+| Case | Mechanism | Where |
 |---|---|---|
-| Oct 7 | first 12 pages: the non-crossing column model | 01 (and 02 for the first part of §3) |
-| Oct 8 | early lemmas straightforward; §3 introduces the "chart" he found hard | **02** |
-| Oct 9 | §3 lemmas are reformulations; Theorem 4.1 read, §4 proof skipped | 03 |
-| Oct 10 | Corollary 4.6 "clever"; §5 "vague" | 03 (4.6), **04** |
-| Oct 11 | reread §5, started §6.1; thinks §6–8 are the main arguments | 04, **05**, 06, 07, 08 |
+| an endpoint has no descending path | the main update raises the field there | Lemma 6.3, Cor. 6.4 |
+| a non-neighbour link with low inactive tip separates the pair | component certificate in $A$ | Lemma 3.2, Lemma 6.5 |
+| otherwise the endpoints are *seeds*; at most $M_{\mathrm{pack}}$ seed groups meet a ball | secondary clipping in $B$ at an admitted seed | Prop. 6.6, Lemma 8.2 |
+| clipping fails in both orientations | the ordered part of the field rises and falls on short paths, forcing the endpoints onto opposite arcs of the circle, where a transverse increment separates them | Lemmas 7.6, 8.4 |
 
-## What this proof does *not* give
+**Step 4 (scales and assembly, §9).** For a scale ratio $Q=2^m$ large, a ball $B_d(x,20r_f)$ that lies in one chart at a coarser scale $r$ is split with probability $\le 40C_0\,r_f/r$ (Proposition 9.2); the geometric sum is $<\tfrac12$. Subsequent finer scales move any set by $\le M r_f/(Q-1)$ in total. Mixing over $m$ residue-class schedules and subtracting a reference vertex yields $F$ with
+$$\tfrac{pb}{8m}\,d(x,y)\le\|F(x)-F(y)\|_1\le 2\,d(x,y),\qquad C=\tfrac{16m}{pb}.$$
+**[stated]**
 
-* It gives existence of `C`, not a usable value: with the paper's constants the packing number is about `1.6×10⁹` and `p` is about `2^(−3.2×10⁹)` (see [11](11-glossary-constants.md)). That is not a criticism, just what to expect.
-* It does **not** prove closure under general clique sums, so it does not prove the full GNRS conjecture (the paper says so, §1.2 and after Corollary 10.1).
-* Corollary 10.1 (almost-embeddable families) also needs a second preprint, the bounded-treewidth companion, which these notes do not cover.
+## 0.3 Dependency graph
+
+```
+§2 columns, circular order, portals, cells ─────────────────┐
+      │                                                       │
+      ▼                                                       ▼
+§3 charts, exact gluing, Lemma 3.2        §4 Thm 4.1, Lemma 4.5, Cor. 4.6
+      │                │                                      │
+      │                ▼                                      │
+      │       §5 constants and the step                       │
+      ▼                │                                      ▼
+§6.1 main update ─► §6.2 seeds ─► §6.3 packing ─► (all probability estimates)
+                                      │
+§7 ordered fields, $t_s$, two arcs ──►§8 secondary update, increments
+                                      │
+                                      ▼
+                    §9 estimates, schedule, final map  ──►  Theorem 1.1
+                                      │
+                                      ▼
+                    §10 almost-embeddable families (also needs the bounded-treewidth companion)
+```
+
+## 0.4 Correspondence with the reading log
+
+| Log entry | Content read | Note |
+|---|---|---|
+| 7 Oct | first 12 pages: the column model | [01](01-columns-and-bands.md), part of 02 |
+| 8 Oct | early lemmas; §3 "chart" | 02 |
+| 9 Oct | §3 lemmas; Thm 4.1 | 02, 03 |
+| 10 Oct | Cor. 4.6; §5 | 03, 04 |
+| 11 Oct | §5, start of §6.1; §6–8 expected to be the core | 04–08 |
+
+## 0.5 What the argument does not give
+
+* A usable constant. With $R=10^{-8}$, $g=10^{-14}$: $M_{\mathrm{pack}}=2+\lceil1600R/g\rceil\approx1.6\times10^{9}$ and $p=2^{-(2M_{\mathrm{pack}}+10)}\approx2^{-3.2\times10^{9}}$ (Proposition 9.1). The theorem is one of existence.
+* Closure under clique-sums, hence the full GNRS conjecture (§1.2, after Corollary 10.1).
+* Corollary 10.1 additionally depends on a second OpenAI preprint (bounded treewidth), not covered here.
