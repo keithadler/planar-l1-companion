@@ -18,7 +18,7 @@ Three pieces of Lean 4 / Mathlib (toolchain `v4.34.1`), one per area. Each file 
 
 | Piece | Paper | Declarations audited | Compile time |
 |---|---|---|---|
-| Refinement and gluing | §3.2 | all in the file | 39 s |
+| Refinement and gluing | §3.2 | 149 | 33–39 s |
 | Charts: identity (5), nesting, rebasing | §3.1 | 50 | 17 s |
 | Constants | §5.1 | 59 | 10 s |
 | Main update, descending paths, certificates | §6.1–6.2 | 84 | 8 s |
