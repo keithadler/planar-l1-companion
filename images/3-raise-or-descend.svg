@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><style>
+.bg{fill:#f6f4ee}.ink{fill:#1d2330;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.mut{fill:#5b6473;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.mono{font-family:Menlo,Monaco,monospace;fill:#1d2330}.math{font-family:"STIX Two Text","Times New Roman",serif;fill:#1d2330}
+.card{fill:#ffffff;stroke:#d9d4c7;stroke-width:2}.acc{fill:#2f5fd0}.ok{fill:#1f7a4d}.hand{fill:#b7791f}.no{fill:#a23b3b}.acc,.ok,.hand,.no{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+</style></defs><rect class="bg" width="1600" height="900"/>
+<text class="ink" x="80" y="110" font-size="54" font-weight="700">Raise it, or find a descent</text>
+<text class="mut" x="80" y="160" font-size="28">Lemma 6.3 and Corollary 6.4: why the main update either separates a pair or leaves a trail.</text>
+<rect class="card" x="80" y="200" width="920" height="580" rx="18"/>
+<line x1="140" y1="700" x2="960" y2="700" stroke="#9aa3b2" stroke-width="3"/>
+<text class="mut" x="140" y="740" font-size="22">schematic: field s over one cell</text>
+<line x1="220" y1="260" x2="220" y2="700" stroke="#a23b3b" stroke-width="3" stroke-dasharray="8 8"/><line x1="880" y1="260" x2="880" y2="700" stroke="#a23b3b" stroke-width="3" stroke-dasharray="8 8"/>
+<text class="no" x="230" y="290" font-size="22">frontier</text><text class="no" x="800" y="290" font-size="22">frontier</text>
+<path d="M220 520 C 330 500, 420 470, 550 440 S 790 420, 880 470" fill="none" stroke="#1d2330" stroke-width="4"/>
+<text class="ink" x="560" y="420" font-size="24">old field s</text>
+<circle cx="550" cy="440" r="10" fill="#2f5fd0"/><text class="acc" x="520" y="480" font-size="24">w</text>
+<path d="M550 440 L 550 340" stroke="#1f7a4d" stroke-width="5" marker-end="url(#a)"/>
+<text class="ok" x="590" y="345" font-size="24">raised by more than 2E_A</text>
+<path d="M550 440 L 224 620" stroke="#b7791f" stroke-width="5" stroke-dasharray="3 9"/>
+<circle cx="220" cy="622" r="10" fill="#b7791f"/>
+<text class="hand" x="250" y="665" font-size="24">descending path reaches the frontier lower down: z</text>
+<rect class="card" x="1040" y="200" width="480" height="580" rx="18"/>
+<text class="ink" x="1070" y="255" font-size="32" font-weight="700">The dichotomy</text>
+<text class="mut" x="1070" y="310" font-size="25">Either the update raises s(w)</text><text class="mut" x="1070" y="344" font-size="25">by more than 2E_A,</text>
+<text class="mut" x="1070" y="400" font-size="25">or the frontier is what blocks</text><text class="mut" x="1070" y="434" font-size="25">it. Then a shortest path from w</text><text class="mut" x="1070" y="468" font-size="25">descends almost at maximum</text><text class="mut" x="1070" y="502" font-size="25">rate: s(z) ≤ s(w) − d₀ + ε.</text>
+<text class="ink" x="1070" y="570" font-size="28" font-weight="700">Corollary 6.4</text>
+<text class="mut" x="1070" y="610" font-size="25">No descent at an endpoint, so</text><text class="mut" x="1070" y="644" font-size="25">with probability at least 1/4</text><text class="mut" x="1070" y="678" font-size="25">the pair is separated by at</text><text class="mut" x="1070" y="712" font-size="25">least κ_A·E_A.</text>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1f7a4d"/></marker></defs>
+<text class="mut" x="80" y="860" font-size="24">Unverified notes written by Claude for Keith Adler. Offered in support of human verification, not as a claim about the paper.</text></svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><style>
+.bg{fill:#f6f4ee}.ink{fill:#1d2330;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.mut{fill:#5b6473;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.mono{font-family:Menlo,Monaco,monospace;fill:#1d2330}.math{font-family:"STIX Two Text","Times New Roman",serif;fill:#1d2330}
+.card{fill:#ffffff;stroke:#d9d4c7;stroke-width:2}.acc{fill:#2f5fd0}.ok{fill:#1f7a4d}.hand{fill:#b7791f}.no{fill:#a23b3b}.acc,.ok,.hand,.no{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+</style></defs><rect class="bg" width="1600" height="900"/>
+<text class="ink" x="80" y="110" font-size="54" font-weight="700">The chart: a field difference acts as distance</text>
+<text class="mut" x="80" y="160" font-size="28">Section 3 of the paper, the part the reading log found hard.</text>
+<rect class="card" x="80" y="200" width="1440" height="200" rx="18"/>
+<text class="mut" x="120" y="250" font-size="26">Each point v gets a set of labels ω = (Z, σ): a random threshold Z and a fair sign σ.</text>
+<text class="math" x="120" y="330" font-size="50">A<tspan font-size="32" dy="12">v</tspan><tspan dy="-12"> = { ω : Z(ω) &lt; h(v) + σ(ω)·κ·P(v) }</tspan></text>
+<text class="mut" x="1100" y="330" font-size="24">h = height, P = field, κ small</text>
+<rect class="card" x="80" y="430" width="700" height="360" rx="18"/>
+<text class="ink" x="120" y="485" font-size="32" font-weight="700">Why it works (checked by hand)</text>
+<text class="mut" x="120" y="540" font-size="26">For a fixed sign the two sets differ by a</text><text class="mut" x="120" y="574" font-size="26">half-line of length |Δh ± κΔP|. Average</text><text class="mut" x="120" y="608" font-size="26">over the two signs:</text>
+<text class="math" x="120" y="680" font-size="40">(|a+b| + |a−b|)/2 = max(|a|, |b|)</text>
+<text class="mut" x="120" y="740" font-size="24">with a = Δh and b = κΔP.</text>
+<rect class="card" x="820" y="430" width="700" height="360" rx="18"/>
+<text class="ink" x="860" y="485" font-size="32" font-weight="700">Formula (5)</text>
+<text class="math" x="860" y="570" font-size="42">μ(A<tspan font-size="26" dy="10">v</tspan><tspan dy="-10"> △ A</tspan><tspan font-size="26" dy="10">w</tspan><tspan dy="-10">)</tspan></text>
+<text class="math" x="860" y="640" font-size="42">= max{ |Δh| , κ·|ΔP| }</text>
+<text class="mut" x="860" y="710" font-size="24">So adding a field P lets an update separate two</text><text class="mut" x="860" y="744" font-size="24">points that height alone would not.</text>
+<text class="mut" x="80" y="860" font-size="24">Unverified notes written by Claude for Keith Adler. Offered in support of human verification, not as a claim about the paper.</text></svg>

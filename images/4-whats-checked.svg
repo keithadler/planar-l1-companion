@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><style>
+.bg{fill:#f6f4ee}.ink{fill:#1d2330;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.mut{fill:#5b6473;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.mono{font-family:Menlo,Monaco,monospace;fill:#1d2330}.math{font-family:"STIX Two Text","Times New Roman",serif;fill:#1d2330}
+.card{fill:#ffffff;stroke:#d9d4c7;stroke-width:2}.acc{fill:#2f5fd0}.ok{fill:#1f7a4d}.hand{fill:#b7791f}.no{fill:#a23b3b}.acc,.ok,.hand,.no{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+</style></defs><rect class="bg" width="1600" height="900"/>
+<text class="ink" x="80" y="110" font-size="54" font-weight="700">What has been checked, and what has not</text>
+<text class="mut" x="80" y="160" font-size="28">An honest status for human verifiers. Nothing here says the main theorem is true or false.</text>
+<rect class="card" x="80" y="210" width="460" height="560" rx="18"/><rect x="80" y="210" width="460" height="14" rx="7" fill="#1f7a4d"/>
+<text class="ok" x="110" y="275" font-size="32" font-weight="700">Machine-checked (Lean)</text>
+<text class="mut" x="110" y="330" font-size="25">Lemma 3.2: component</text><text class="mut" x="110" y="364" font-size="25">refinement and its</text><text class="mut" x="110" y="398" font-size="25">separation clause.</text>
+<text class="mut" x="110" y="452" font-size="25">Exact gluing: nesting,</text><text class="mut" x="110" y="486" font-size="25">switches, length bound.</text>
+<text class="mut" x="110" y="560" font-size="23">Compiles, no sorry, only the</text><text class="mut" x="110" y="592" font-size="23">three standard axioms.</text><text class="mut" x="110" y="624" font-size="23">Assumptions are explicit.</text>
+<rect class="card" x="570" y="210" width="460" height="560" rx="18"/><rect x="570" y="210" width="460" height="14" rx="7" fill="#b7791f"/>
+<text class="hand" x="600" y="275" font-size="32" font-weight="700">Checked by hand</text>
+<text class="mut" x="600" y="330" font-size="25">Identity (5): the sign</text><text class="mut" x="600" y="364" font-size="25">average equals the max.</text>
+<text class="mut" x="600" y="418" font-size="25">Rebasing: the pushforward</text><text class="mut" x="600" y="452" font-size="25">stays Lebesgue.</text>
+<text class="mut" x="600" y="526" font-size="23">Done by Claude while reading.</text><text class="mut" x="600" y="558" font-size="23">Not reviewed by an expert.</text>
+<rect class="card" x="1060" y="210" width="460" height="560" rx="18"/><rect x="1060" y="210" width="460" height="14" rx="7" fill="#a23b3b"/>
+<text class="no" x="1090" y="275" font-size="32" font-weight="700">Not checked</text>
+<text class="mut" x="1090" y="330" font-size="25">Interpolation (Section 4).</text><text class="mut" x="1090" y="364" font-size="25">The packing bound (6.3).</text><text class="mut" x="1090" y="398" font-size="25">Ordered fields (7) and the</text><text class="mut" x="1090" y="432" font-size="25">secondary update (8).</text><text class="mut" x="1090" y="466" font-size="25">The probability argument</text><text class="mut" x="1090" y="500" font-size="25">and schedule (9).</text>
+<text class="mut" x="1090" y="574" font-size="23">And whether the assumptions</text><text class="mut" x="1090" y="606" font-size="23">I stated are the authors' own.</text>
+<text class="mut" x="80" y="860" font-size="24">Unverified notes written by Claude for Keith Adler. Offered in support of human verification, not as a claim about the paper.</text></svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><style>
+.bg{fill:#f6f4ee}.ink{fill:#1d2330;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.mut{fill:#5b6473;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.mono{font-family:Menlo,Monaco,monospace;fill:#1d2330}.math{font-family:"STIX Two Text","Times New Roman",serif;fill:#1d2330}
+.card{fill:#ffffff;stroke:#d9d4c7;stroke-width:2}.acc{fill:#2f5fd0}.ok{fill:#1f7a4d}.hand{fill:#b7791f}.no{fill:#a23b3b}.acc,.ok,.hand,.no{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+</style></defs><rect class="bg" width="1600" height="900"/>
+<text class="ink" x="80" y="110" font-size="54" font-weight="700">How the planar L1 proof is built: four moves</text>
+<text class="mut" x="80" y="160" font-size="28">OpenAI preprint, 23 Sep 2026. A reading map, not a verdict.</text>
+<g>
+<rect class="card" x="80" y="210" width="340" height="560" rx="18"/><circle class="acc" cx="130" cy="262" r="26"/><text x="130" y="272" text-anchor="middle" font-size="30" font-weight="700" fill="#fff" font-family="Helvetica,Arial">1</text>
+<text class="ink" x="170" y="272" font-size="32" font-weight="700">Columns</text>
+<text class="mut" x="110" y="340" font-size="26">Replace the plane graph</text><text class="mut" x="110" y="374" font-size="26">by vertical lines with</text><text class="mut" x="110" y="408" font-size="26">zero-cost switches.</text>
+<text class="mut" x="110" y="470" font-size="26">Height = distance from</text><text class="mut" x="110" y="504" font-size="26">a root. Planarity lives</text><text class="mut" x="110" y="538" font-size="26">in the circular order.</text>
+<text class="ink" x="110" y="720" font-size="26" font-weight="700">Section 2</text>
+<rect class="card" x="460" y="210" width="340" height="560" rx="18"/><circle class="acc" cx="510" cy="262" r="26"/><text x="510" y="272" text-anchor="middle" font-size="30" font-weight="700" fill="#fff" font-family="Helvetica,Arial">2</text>
+<text class="ink" x="550" y="272" font-size="32" font-weight="700">Upper bound</text>
+<text class="mut" x="490" y="340" font-size="26">Label sets grow with</text><text class="mut" x="490" y="374" font-size="26">height and agree at</text><text class="mut" x="490" y="408" font-size="26">switches, so every</text><text class="mut" x="490" y="442" font-size="26">cut distance is at most</text><text class="mut" x="490" y="476" font-size="26">any path length.</text>
+<text class="mut" x="490" y="538" font-size="26">An invariant, kept by</text><text class="mut" x="490" y="572" font-size="26">exact gluing.</text>
+<text class="ink" x="490" y="720" font-size="26" font-weight="700">Section 3</text>
+<rect class="card" x="840" y="210" width="340" height="560" rx="18"/><circle class="acc" cx="890" cy="262" r="26"/><text x="890" y="272" text-anchor="middle" font-size="30" font-weight="700" fill="#fff" font-family="Helvetica,Arial">3</text>
+<text class="ink" x="930" y="272" font-size="32" font-weight="700">Lower bound</text>
+<text class="mut" x="870" y="340" font-size="26">Random local updates</text><text class="mut" x="870" y="374" font-size="26">at shrinking scales r.</text>
+<text class="mut" x="870" y="436" font-size="26">Two systems, A and B.</text><text class="mut" x="870" y="470" font-size="26">Raise the field, or a</text><text class="mut" x="870" y="504" font-size="26">descending path exists;</text><text class="mut" x="870" y="538" font-size="26">else seeds, packing,</text><text class="mut" x="870" y="572" font-size="26">ordered fields.</text>
+<text class="ink" x="870" y="720" font-size="26" font-weight="700">Sections 4 to 8</text>
+<rect class="card" x="1220" y="210" width="300" height="560" rx="18"/><circle class="acc" cx="1270" cy="262" r="26"/><text x="1270" y="272" text-anchor="middle" font-size="30" font-weight="700" fill="#fff" font-family="Helvetica,Arial">4</text>
+<text class="ink" x="1310" y="272" font-size="32" font-weight="700">Schedule</text>
+<text class="mut" x="1250" y="340" font-size="26">Scales differ by a big</text><text class="mut" x="1250" y="374" font-size="26">factor Q. Coarse steps</text><text class="mut" x="1250" y="408" font-size="26">rarely break charts;</text><text class="mut" x="1250" y="442" font-size="26">fine steps move too</text><text class="mut" x="1250" y="476" font-size="26">little to undo gains.</text>
+<text class="mut" x="1250" y="538" font-size="26">Average m schedules.</text>
+<text class="ink" x="1250" y="720" font-size="26" font-weight="700">Section 9</text>
+</g>
+<text class="mut" x="80" y="860" font-size="24">Unverified notes written by Claude for Keith Adler. Offered in support of human verification, not as a claim about the paper.</text></svg>
