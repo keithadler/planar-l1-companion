@@ -29,8 +29,8 @@ Equivalently, the flow–cut gap of planar graphs is uniformly bounded (via Gupt
 | [01 columns and bands](docs/01-columns-and-bands.md) | §2 | Column models, the circular order, portals, radial cells |
 | [02 charts](docs/02-charts.md) | §3 | Threshold sets $\{Z<h+\sigma\kappa P\}$, charts, exact gluing, component refinement |
 | [03 interpolation](docs/03-interpolation.md) | §4 | Theorem 4.1 and Corollary 4.6 |
-| *(in progress)* 04 scales and steps | §5 | Constant hierarchy, schedules, the step |
-| *(in progress)* 05 the main update | §6.1–6.2 | Raise-or-descend, low-tip certificates, seeds |
+| [04 scales and steps](docs/04-scales-and-steps.md) | §5 | Constant hierarchy, schedules, the step |
+| [05 the main update](docs/05-main-update.md) | §6.1–6.2 | Raise-or-descend, low-tip certificates, seeds |
 | *(in progress)* 06 packing | §6.3 | Proposition 6.6 |
 | *(in progress)* 07 ordered fields | §7 | Ordered fields, transverse coordinate, two arcs |
 | *(in progress)* 08 secondary update | §8 | Clipping near admitted seeds; ordered increments |
