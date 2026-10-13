@@ -35,11 +35,10 @@ The paper states that this is the planar case of the conjecture of Gupta, Newman
 | [07 ordered fields](docs/07-ordered-fields.md) | §7 | Ordered fields, transverse coordinate, two arcs |
 | [08 secondary update](docs/08-secondary-update.md) | §8 | Clipping near admitted seeds; ordered increments |
 | [09 assembly](docs/09-assembly.md) | §9–10 | One-step estimates, chart persistence, the schedule, the constant |
-| *(in progress)* 10 where to look | all | Load-bearing steps and precise questions |
-| *(in progress)* 11 glossary | all | Symbols and parameters |
-| *(in progress)* 12 Lean status | §3 | What is machine-checked, with hypotheses |
+| [10 where to look](docs/10-where-to-look.md) | all | Load-bearing steps and precise questions |
+| [11 glossary](docs/11-glossary-constants.md) | all | Symbols and parameters |
+| [12 Lean status](docs/12-lean-status.md) | §3 | What is machine-checked, with hypotheses |
 
-Notes marked *(in progress)* are being written and are added as they are finished.
 
 ## Licence
 
