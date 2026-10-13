@@ -1,6 +1,6 @@
 # 02. Threshold sets, charts, exact gluing, component refinement (paper §3)
 
-Tags as in the [README](../README.md). **[Lean]** here means checked by the author's compile of `Refinement.lean` (PR #1 of `planar-l1-lean`) under the hypotheses listed in [12](12-lean-status.md). Items from PR #2 (identity (5), rebasing) are tagged **[hand]**; their Lean check is pending review.
+Tags as in the [README](../README.md). **[Lean]** here means compiled and audited by the author in Lean 4 / Mathlib under the hypotheses listed in [12](12-lean-status.md); the Lean sources are not yet public. Identity (5) and rebasing are tagged **[hand]**; a Lean formalisation of them exists but has not yet had its statements reviewed against the paper.
 
 ## 2.1 Threshold sets
 
@@ -20,7 +20,7 @@ $$\mu(A_v\triangle A_w)=\max\{|h(v)-h(w)|,\ \kappa|P(v)-P(w)|\}.\tag{5}$$
 
 *The law of $Z'$* **[hand]**. For $a<b$,
 $$\mu\{a<Z'<b\}=\tfrac12\big[(\varphi_+(b)-\varphi_+(a))+(\varphi_-(b)-\varphi_-(a))\big]=b-a,$$
-because the $\pm\kappa(\psi(b)-\psi(a))$ terms cancel. **Caveat on the paper's wording** (noticed while formalising): given the *old* sign $\sigma=s$, the conditional law of $Z'$ is $(\varphi_s^{-1})_*\mathcal L$, which depends on $s$; so $(Z',\sigma)$ is *not* distributed as $\mathcal L\otimes\mathrm{fair}$. What holds, and what the proof uses, is that $Z'$ is Lebesgue and independent of a **fresh** sign coordinate $\sigma'$ unused earlier in the execution (the paper's "choose a sign coordinate unused anywhere earlier"). The pair $(Z',\sigma')$ then has the required joint law.
+because the $\pm\kappa(\psi(b)-\psi(a))$ terms cancel. **A point about independence.** Given the *old* sign $\sigma=s$, the conditional law of $Z'=\varphi_s^{-1}(Z)$ is $(\varphi_s^{-1})_*\mathcal L$, which depends on $s$; so $(Z',\sigma)$ is *not* distributed as $\mathcal L\otimes\mathrm{fair}$. This is consistent with the paper, which does not use the old sign: it takes a **fresh** sign coordinate $\sigma'$ "unused anywhere earlier in this execution", independent of $Z'$, so that $(Z',\sigma')$ has the required joint law. (The point is worth keeping in mind when reading later uses of rebased charts: independence is from $\sigma'$, not from $\sigma$.)
 
 ## 2.2 Charts
 
@@ -46,7 +46,7 @@ A local update is first written in the old chart variables. The new field is $\m
 
 Let a system of sets $(A_p)$ be nested increasingly on each column, respect switches, and satisfy $\mu(A_p\triangle A_q)\le$ vertical length. For a label $\omega$ call a point *active* if $\omega\in A_p$ and **join columns $i,j$ whenever some $s\in S_{ij}$ has $\omega\in A_{(i,s)}$**. Assign to an active point the unit vector of its component and to an inactive point $0$; let $\rho_\omega(p,q)$ be the $\ell_1$ distance of the assigned vectors and $\tilde d(p,q)=\int\rho_\omega(p,q)\,d\mu(\omega)$.
 
-**Lemma 3.2** **[Lean]**. (a) $\tilde d$ is a pseudometric, $\tilde d(p,q)\ge\mu(A_p\triangle A_q)$, and $\tilde d(p,q)\le L$ for every path of length $L$ from $p$ to $q$ (hence $\tilde d\le d$). (b) If $ab$ is a non-neighbour link with tip $(a,H_e)$ inactive for $\omega$, and $p,q$ are active for $\omega$ with columns strictly on opposite sides of $ab$, then $\rho_\omega(p,q)=2$; integrated, $2\,\mu\big((A_p\cap A_q)\setminus A_{(a,H_e)}\big)\le\tilde d(p,q)$.
+**Lemma 3.2** **[Lean]**. (a) $\tilde d$ is a pseudometric, $\tilde d(p,q)\ge\mu(A_p\triangle A_q)$, and $\tilde d(p,q)\le L$ for every path of length $L$ from $p$ to $q$ (hence $\tilde d\le d$). (b) If $ab$ is a non-neighbour link with tip $(a,H_e)$ inactive for $\omega$, and $p,q$ are active for $\omega$ with columns strictly on opposite sides of $ab$, then $\rho_\omega(p,q)=2$; integrating over the labels where $p,q$ are active and the tip is inactive, $2\,\mu\big((A_p\cap A_q)\setminus A_{(a,H_e)}\big)\le\tilde d(p,q)$ (this integrated form is a direct corollary; the paper uses it in §6.2 and §9.3 but does not state it as a separate display).
 
 *Proof sketch (paper).* On a vertical segment the vector changes only when activity changes, at $\ell_1$-cost equal to the original indicator cost; across an active switch the columns share a component; across an inactive switch both vectors vanish. For (b): every switch at an endpoint column of the link lies at or below the tip, so if the tip is inactive nesting makes them all inactive; a path of column indices between the two strict sides passes through an endpoint (Lemma 2.4), so no active path joins them. Measurability: the set $\{\omega:\ \text{active switch on }ij\}$ equals $A_{(i,\max S_{ij})}$ ($S_{ij}$ compact, nesting), so all finitely many component coordinates are measurable.
 

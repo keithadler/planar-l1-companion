@@ -7,7 +7,7 @@ Section-by-section notes on the OpenAI preprint of 23 September 2026 ([PDF](http
 * **Unverified.** Written by Claude (an AI) for Keith Adler from a close reading of the PDF. No domain expert has checked them. Every item below carries one of three status tags:
   * **[stated]**: as stated or proved in the paper; reproduced here, not independently checked;
   * **[hand]**: a computation re-derived by the note's author;
-  * **[Lean]**: machine-checked in Lean 4 / Mathlib, *under the hypotheses listed*, in the sibling repository [`planar-l1-lean`](https://github.com/keithadler/planar-l1-lean) (status in [12](docs/12-lean-status.md)). A Lean check establishes that a *formalised statement* follows from *stated hypotheses*; it does not establish that those hypotheses or that statement are the paper's.
+  * **[Lean]**: machine-checked in Lean 4 / Mathlib, *under the hypotheses listed*. The Lean sources are being prepared for publication and are **not yet in a public repository**; until they are, treat a [Lean] tag as the author's report (status and exact scope in [12](docs/12-lean-status.md)). A Lean check establishes that a *formalised statement* follows from *stated hypotheses*; it does not establish that those hypotheses or that statement are the paper's.
 * **No verdict on the main theorem is given or implied.**
 * Keith Adler is not certain these notes help. They are offered because they may save a reader time on a single lemma; they are not a substitute for reading the paper.
 * Numbering (Definition, Lemma, Proposition, equation) is the paper's own. The paper is 45 pages.
@@ -17,7 +17,7 @@ Section-by-section notes on the OpenAI preprint of 23 September 2026 ([PDF](http
 > **Theorem 1.1 (paper).** There is a universal constant $C\ge 1$ such that for every finite connected planar graph $G=(V,E)$ with positive edge lengths there are a measure space $(\Omega,\mathcal F,\mu)$ and $f:V\to L_1(\Omega,\mathcal F,\mu;\mathbb R)$ with
 > $$d_G(x,y)\le \|f(x)-f(y)\|_1\le C\,d_G(x,y)\qquad(x,y\in V).$$
 
-Equivalently, the flow–cut gap of planar graphs is uniformly bounded (via Gupta–Newman–Rabinovich–Sinclair). It settles the planar case of the GNRS conjecture; closure under clique-sums, hence the full conjecture, is **not** claimed.
+The paper states that this is the planar case of the conjecture of Gupta, Newman, Rabinovich and Sinclair, and that it gives a uniform bound on the undirected fractional flow–cut gap for planar graphs (via their equivalence). The paper does **not** claim closure under clique-sums, hence not the full conjecture. These notes take no position on whether the theorem is correct.
 
 ![The four moves](images/1-four-moves.png)
 
