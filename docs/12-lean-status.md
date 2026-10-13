@@ -1,6 +1,6 @@
 # 12. Lean status: what is machine-checked, and what that does and does not mean
 
-Tags as in the [README](../README.md). **The Lean sources are not yet public.** They live in a private repository and are being prepared for publication under Apache-2.0 (the licence Mathlib uses). Until then, everything below is the notes' author's report; once published, each claim can be checked by running the Lean compiler.
+Tags as in the [README](../README.md). The Lean sources are public, under Apache-2.0 (the licence Mathlib uses), at **[github.com/keithadler/planar-l1-lean](https://github.com/keithadler/planar-l1-lean)**; each claim below can be checked by running the Lean compiler on the four files there.
 
 ## 12.1 What a Lean check does and does not establish
 

@@ -1,6 +1,6 @@
 # 02. Threshold sets, charts, exact gluing, component refinement (paper §3)
 
-Tags as in the [README](../README.md). **[Lean]** here means compiled and audited by the author in Lean 4 / Mathlib under the hypotheses listed in [12](12-lean-status.md); the Lean sources are not yet public. Identity (5) and rebasing are tagged **[hand]**; a Lean formalisation of them exists but has not yet had its statements reviewed against the paper.
+Tags as in the [README](../README.md). **[Lean]** here means compiled and audited by the author in Lean 4 / Mathlib under the hypotheses listed in [12](12-lean-status.md); the Lean sources are at [`planar-l1-lean`](https://github.com/keithadler/planar-l1-lean). Identity (5) and rebasing are tagged **[hand]**; a Lean formalisation of them exists but has not yet had its statements reviewed against the paper.
 
 ## 2.1 Threshold sets
 

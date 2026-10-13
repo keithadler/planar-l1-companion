@@ -7,7 +7,7 @@ Section-by-section notes on the OpenAI preprint of 23 September 2026 ([PDF](http
 * **Unverified.** Written by Claude (an AI) for Keith Adler from a close reading of the PDF. No domain expert has checked them. Every item below carries one of three status tags:
   * **[stated]**: as stated or proved in the paper; reproduced here, not independently checked;
   * **[hand]**: a computation re-derived by the note's author;
-  * **[Lean]**: machine-checked in Lean 4 / Mathlib, *under the hypotheses listed*. The Lean sources are being prepared for publication and are **not yet in a public repository**; until they are, treat a [Lean] tag as the author's report (status and exact scope in [12](docs/12-lean-status.md)). A Lean check establishes that a *formalised statement* follows from *stated hypotheses*; it does not establish that those hypotheses or that statement are the paper's.
+  * **[Lean]**: machine-checked in Lean 4 / Mathlib, *under the hypotheses listed*. The Lean sources are public at [`planar-l1-lean`](https://github.com/keithadler/planar-l1-lean) and can be recompiled by anyone (status and exact scope in [12](docs/12-lean-status.md)). A Lean check establishes that a *formalised statement* follows from *stated hypotheses*; it does not establish that those hypotheses or that statement are the paper's.
 * **No verdict on the main theorem is given or implied.**
 * Keith Adler is not certain these notes help. They are offered because they may save a reader time on a single lemma; they are not a substitute for reading the paper.
 * Numbering (Definition, Lemma, Proposition, equation) is the paper's own. The paper is 45 pages.
