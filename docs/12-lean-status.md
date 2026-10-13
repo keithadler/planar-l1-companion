@@ -2,6 +2,8 @@
 
 Tags as in the [README](../README.md). The Lean sources are public, under Apache-2.0 (the licence Mathlib uses), at **[github.com/keithadler/planar-l1-lean](https://github.com/keithadler/planar-l1-lean)**; each claim below can be checked by running the Lean compiler on the four files there.
 
+**OpenAI also published its own Lean formalisation of this paper** (see the [README](../README.md#openais-own-lean-formalisation)); it proves the whole theorem and is far larger than anything described here. The work below is a small, independent, clean-room cross-check of a few lemmas, and is not a substitute for checking theirs. One cross-check between the two: the concrete widths $a_1=10^{-100}$, $a_2=10^{-160}$ in OpenAI's `Parameters.lean` satisfy every hypothesis of our `Choice` structure (`CrossCheck.lean`, 14 declarations, no non-standard axioms); the numerical constants of §5.1 agree between the two readings.
+
 ## 12.1 What a Lean check does and does not establish
 
 A formalised theorem is a statement in Lean's logic together with a proof checked by Lean's kernel. It establishes that the *formal statement* follows from the *stated hypotheses* using only the three standard axioms (`propext`, `Classical.choice`, `Quot.sound`). It does **not** establish that:
@@ -22,6 +24,7 @@ Three pieces of Lean 4 / Mathlib (toolchain `v4.34.1`), one per area. Each file 
 | Charts: identity (5), nesting, rebasing | §3.1 | 50 | 17 s |
 | Constants | §5.1 | 59 | 10 s |
 | Main update, descending paths, certificates | §6.1–6.2 | 84 | 8 s |
+| Cross-check with OpenAI's concrete widths | §5.1 | 14 | a few seconds |
 
 ### Refinement and gluing (§3.2)
 

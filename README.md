@@ -13,6 +13,12 @@ Section-by-section notes on the OpenAI preprint of 23 September 2026 ([PDF](http
 * Numbering (Definition, Lemma, Proposition, equation) is the paper's own. The paper is 45 pages.
 * Notation: $\square$ marks the end of a proof (the paper's own convention, here reproduced); *[sketch]* or *proof idea* means a summary, not a full proof; $\approx$ in a constant means an order-of-magnitude statement.
 
+## OpenAI's own Lean formalisation
+
+OpenAI published a Lean 4 formalisation of this theorem alongside the paper: the formal statement is [`lean/ComparatorChallenges/PlanarL1.lean`](https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PlanarL1.lean) and the proof is in [`lean/OAI/Combinatorics/PlanarL1/`](https://github.com/openai/math/tree/main/lean/OAI/Combinatorics/PlanarL1) (63 files; top-level theorem `OAI.PlanarL1.planar_graph_metrics_embed_L1` in `Embedding.lean`). These notes' author has **not** compiled it; a text scan found no `sorry`, `axiom`, `native_decide` or `unsafe` in those 63 files, which does not show that it builds.
+
+The [Lean repository](https://github.com/keithadler/planar-l1-lean) linked below is a much smaller, **independent cross-check** (a few lemmas of §3, §5, §6), written from the PDF alone before anyone on this project read OpenAI's Lean. The most useful quick human check is whether OpenAI's roughly 40-line `MainStatement` says what Theorem 1.1 says.
+
 ## The result
 
 > **Theorem 1.1 (paper).** There is a universal constant $C\ge 1$ such that for every finite connected planar graph $G=(V,E)$ with positive edge lengths there are a measure space $(\Omega,\mathcal F,\mu)$ and $f:V\to L_1(\Omega,\mathcal F,\mu;\mathbb R)$ with
